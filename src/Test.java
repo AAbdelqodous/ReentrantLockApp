@@ -9,6 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Test {
 
     public static void main(String[] args) {
+//        Lock lock = new ReentrantLock(false);
         Lock lock = new ReentrantLock();
         FileWriter fileWriter = null;
         try{
