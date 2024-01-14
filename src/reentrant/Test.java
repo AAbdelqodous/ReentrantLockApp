@@ -1,8 +1,7 @@
+package reentrant;
+
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -14,8 +13,8 @@ public class Test {
         FileWriter fileWriter = null;
         try{
             fileWriter = new FileWriter("output.txt");
-            Thread t1 = new Thread(new FileWiterWorker(lock, fileWriter));
-            Thread t2 = new Thread(new FileWiterWorker(lock, fileWriter));
+            Thread t1 = new Thread(new FileWriterWorker(lock, fileWriter));
+            Thread t2 = new Thread(new FileWriterWorker(lock, fileWriter));
             t1.start();
             t2.start();
 

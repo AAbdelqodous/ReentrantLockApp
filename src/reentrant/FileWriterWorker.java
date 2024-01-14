@@ -1,13 +1,14 @@
-import java.io.File;
+package reentrant;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 
-public class FileWiterWorker implements Runnable {
+public class FileWriterWorker implements Runnable {
     private final Lock lock;
     private final FileWriter fileWriter;
-    public FileWiterWorker(Lock lock, FileWriter fileWriter) {
+    public FileWriterWorker(Lock lock, FileWriter fileWriter) {
         this.lock = lock;
         this.fileWriter = fileWriter;
     }
